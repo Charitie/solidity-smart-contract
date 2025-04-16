@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FudMe.sol": "TestStorage"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FudMe.sol": {
+			"keccak256": "0xb0241896213d95ed8da6b2fd71d477bfb55f84a6f5cda537920cb6fa27442e41",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://2f6159941a628967f847e63e5d27ae10a47c986c30bd435d1f5f4e8d5d394afe",
+				"dweb:/ipfs/QmeJWoLx1dSW5mexNrDp19cruY7wKFngSALbEzGnTwudBo"
+			]
+		}
+	},
+	"version": 1
+}
