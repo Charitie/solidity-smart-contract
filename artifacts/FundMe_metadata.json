@@ -6,19 +6,18 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "fund",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getConversionRate",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "funder",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amountFunded",
 						"type": "uint256"
 					}
 				],
@@ -27,19 +26,25 @@
 			},
 			{
 				"inputs": [],
-				"name": "getPrice",
+				"name": "fund",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getVersion",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -95,11 +100,19 @@
 			]
 		},
 		"FundMe.sol": {
-			"keccak256": "0xf58cf2bffb5201169cc5be72e77b60d4639235ec65f0d331ae44e79df7dc27b7",
+			"keccak256": "0x252a3f5b8194f2029a8c664339e11ed34e7418cfc456afc5a236493d3b2e92e8",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://506d41c0f6fc4a9854d63e96542e407bb80b062c7ff39071c26d433605d9bc16",
-				"dweb:/ipfs/QmNtTEYNyDgpoLxHCr1sCNWVcUaR1MEZRTUsjmCRbusxiw"
+				"bzz-raw://85791fd2f51e8fa54ec23a75adfe4b25480f655772834478bd53d3c40f7191e0",
+				"dweb:/ipfs/QmYaxWrsgRH5xNCKUuV2uW25qT99e9aeQ3mPURmF4vHxA3"
+			]
+		},
+		"PriceConverter.sol": {
+			"keccak256": "0x01d03d837b3b06b8a81a6927851f7d2c7ee4fd7e86ff26963c3923359840d45a",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://2d7e0604a0ff141d7b2f6ad67368df3c44bf8db0d65a7a970ff33a9c46a25ead",
+				"dweb:/ipfs/QmSnLSw6VwfGHR1XejqKu6kmV3Y8ioEnKcPZeAAPt7QEVK"
 			]
 		}
 	},
