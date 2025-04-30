@@ -3,6 +3,10 @@ pragma solidity 0.8.24;
 
 import {PriceConverter} from "./PriceConverter.sol";
 
+// const, immutable(cost less gas)
+
+error NotOwner();// gas efficient
+
 contract FundMe{
     using PriceConverter for uint256;
 
@@ -11,10 +15,10 @@ contract FundMe{
     address[] public funders;
     mapping (address funder => uint256 amountFunded) public  addressToAmountFunded;
 
-    address public owner;
+    address public immutable i_owner;
 
     constructor() {
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable {
@@ -43,12 +47,21 @@ contract FundMe{
         // require(sendSuccess, "Send Failed");
 
         //call
-        (bool callSuccess,  ) = payable (msg.sender).call{value: address(this).balance  }("");
+        (bool callSuccess,  ) = payable(msg.sender).call{value: address(this).balance  }("");
         require(callSuccess, "Call failed");
     }
 
     modifier  onlyOwner(){
-        require(msg.sender == owner, "Must be owner!");
+        // require(msg.sender == i_owner, "Must be ow ner!");
+        if(msg.sender != i_owner){ revert NotOwner();}
         _;// execute any other code after validation
+    }
+
+    receive() external payable { 
+        fund();
+    }
+
+    fallback() external payable { 
+        fund();
     }
 }
